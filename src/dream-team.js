@@ -14,10 +14,12 @@ const {NotImplementedError} = require('../extensions/index.js');
  *
  */
 function createDreamTeam(members) {
-    return  members
-        .map(el => typeof el !== 'string' ? false : el[0].toUpperCase())
-        .sort()
-        .join('')
+    return Array.isArray(members)
+        ? members
+            .map(el => typeof el !== 'string' ? '' : el.trim()[0].toUpperCase())
+            .sort()
+            .join('')
+        : false
 }
 
 module.exports = {
