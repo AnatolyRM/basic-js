@@ -1,4 +1,4 @@
-const { NotImplementedError } = require('../extensions/index.js');
+const {NotImplementedError} = require('../extensions/index.js');
 
 /**
  * Given a number, replace this number with
@@ -13,11 +13,11 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function getSumOfDigits(n) {
-  let sum = [...n.toString()]
-      .reduce((sum, num) => sum + +num, 0)
-  return sum < 10 ? sum : getSumOfDigits(sum)
+    let sum = [...n.toString()]
+        .reduce((sum, num) => sum + +num, 0)
+    return sum < 10 ? sum : getSumOfDigits(sum)
 }
 
 module.exports = {
-  getSumOfDigits
+    getSumOfDigits
 };
