@@ -13,9 +13,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function getSumOfDigits(n) {
-  let sum = n
-      .toString()
-      .split('')
+  let sum = [...n.toString()]
       .reduce((sum, num) => sum + +num, 0)
   return sum < 10 ? sum : getSumOfDigits(sum)
 }
